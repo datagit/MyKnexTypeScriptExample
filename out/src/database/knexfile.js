@@ -1,7 +1,8 @@
 require('ts-node/register');
 module.exports = {
     client: process.env.DATABASE_CLIENT || 'pg',
-    // <user>:<password>@<host>:<port>/<db_name>
+    // DATABASE_URL=postgres://<user>:<password>@<host>:<port>/<db_name>
+    // shell=postgres://<user>:<password>@<host>:<port>/<db_name>
     connection: process.env.DATABASE_URL || 'postgres://api-user@localhost:5432/api-example',
     pool: {
         min: Number(process.env.DATABASE_POOL_MIN || '2'),
